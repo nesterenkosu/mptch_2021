@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="angular.min.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body ng-app="app">
+		
+		<my-useredit id="15"></my-useredit>	
+		<my-useredit id="17"></my-useredit>
+		<my-useredit id="16"></my-useredit>		
+		
+		<script type="text/ng-template" id="my_first_template">
+			Имя:<br/>
+			<input type="text" ng-model="f.Name"><br/>
+			Email:<br/>
+			<input type="text" ng-model="f.Email"><br/>
+			Возраст:<br/>
+			<input type="text" ng-model="f.Age"><br/>
+		</script>
+	</body>
+</html>

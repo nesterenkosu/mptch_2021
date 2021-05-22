@@ -1,0 +1,65 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+		<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <td>{{user.Name}}</td>
+        <td>{{user.Email}}</td>
+        <td>{{user.Age}}</td>
+		<td>
+			<button myng-userid={{user.ID}} class="btn btn-primary bbt">Редактировать</button>
+			<button myng-userid={{user.ID}} class="btn btn-danger bbt" ng-click="delitem(user.ID)">Удалить</button>
+		</td>
+      </tr>
+      <!--tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+		<td>
+			<button class="btn btn-primary">Редактировать</button>
+			<button class="btn btn-danger">Удалить</button>
+		</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+		<td>
+			<button class="btn btn-primary">Редактировать</button>
+			<button class="btn btn-danger">Удалить</button>
+		</td>
+      </tr-->
+    </tbody>
+</table>
+
+<!-- The Modal -->
+<div class="modal" id="myModalDelete">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Подтверждение удаления</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Действительно удалить выбранный элемент?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Нет</button>
+		<button type="button" class="btn btn-danger" data-dismiss="modal">Да</button>
+      </div>
+
+    </div>
+  </div>
+</div>

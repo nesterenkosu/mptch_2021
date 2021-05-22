@@ -1,0 +1,17 @@
+<form name="myForm">
+	Имя: <br/>
+	<input name="name" type="text" ng-model="user.Name" required /><br/>
+	Email:<br/>
+	<input name="email" type="email" ng-model="user.Email"/><br/>
+	Возраст:<br/>
+	<input name="age" type="text" ng-model="user.Age" my-age/><br/>
+	
+	<div ng-show="myForm.$invalid && myForm.name.$touched">
+		Форма содержит ошибки:
+		<div ng-show="myForm.name.$invalid && myForm.name.$touched">Обязательное поле "Имя" не заполнено</div>
+		<div ng-show="myForm.email.$invalid">Поле Email содержит недопустимые символы</div>
+		<div ng-show="myForm.age.$invalid">Значение поля возраст не попадает в заданный диапазон</div>
+	</div>
+	
+	<button ng-click="CreateOrUpdate(user)" ng-disabled="myForm.$invalid">Сохранить</button>
+</form>

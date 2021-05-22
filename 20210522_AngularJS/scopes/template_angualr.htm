@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="angular.min.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div ng-app="app">
+			<div ng-controller="mycontrol1">
+				<b>Контроллер 1:</b>
+				Индивидуальные данные:
+				<input type="text" ng-model="val"/>
+				{{val}}
+				Общие данные:
+				<input type="text" ng-model="val_shared.v"/>
+				{{val_shared.v}}
+			</div>
+			<hr/>
+			<div ng-controller="mycontrol2">
+				<b>Контроллер 2:</b>
+				Индивидуальные данные:
+				<input type="text" ng-model="val"/>
+				{{val}}
+				Общие данные:
+				<input type="text" ng-model="val_shared.v"/>
+				{{val_shared.v}}
+			</div>
+		</div>
+	</body>
+</html>

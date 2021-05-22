@@ -1,0 +1,66 @@
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Создать новое
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Создать/отредактировать элемент</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+		<form name="myForm" class="needs-validation" novalidate>
+			<div class="form-group">
+				<label for="user_name">Имя:</label>
+				<input id="user_name" name="Name" class="form-control" type="text" ng-model="user.Name" ng-class="{'is-invalid': myForm.Name.$invalid && !myForm.Name.$pristine}" required><!--ng-model="user.Name"-->
+				<div class="invalid-feedback">
+					<div>Имя не заполнено</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+						<label for="Email">Email:</label>
+						<input class="form-control" id="Email" name="Email" type="Email" ng-model="user.Email" ng-class="{'is-invalid': myForm.Email.$invalid && !myForm.Email.$pristine}" required>
+						<div class="invalid-feedback">
+							<div>Email заполнен некорректно</div>
+						</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="Age">Возраст:</label>
+				<input class="form-control" id="Age" name="Age" type="text" ng-model="user.Age" ng-class="{'is-invalid': myForm.Age.$invalid && !myForm.Age.$pristine}" age-validator required>
+				<div class="invalid-feedback">
+					<div>Возраст неправильный</div>
+				</div>
+			</div>
+			<!--Email:<br/>
+			<input name="Email" type="email" ng-model="user.Email"><br/>
+			Возраст:<br/>
+			<input name="Age" type="text" ng-model="user.Age" age-validator><br/>
+			<input type="button" ng-disabled="myForm.$invalid" ng-click="CreateOrUpdateUser(user)" value="Сохранить"/>
+			<div>{{message}}</div>
+			<div id="err_msg" ng-show="myForm.$valid">
+				<div ng-show="myForm.Name.$invalid">Имя не заполнено</div>
+				<div ng-show="myForm.Email.$invalid">Email содержит недопустимые символы</div>
+				<div></div>
+			</div-->
+				
+		</form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="CreateOrUpdateUser(user)" data-dismiss="modal">Сохранить</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+      </div>
+
+    </div>
+  </div>
+</div>
